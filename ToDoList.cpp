@@ -111,6 +111,35 @@ void searchTask(vector<Task>& tasks)
     cout << "Task not found.\n";
 }
 
+void updateTask(vector<Task>& tasks)
+{
+    int id;
+    string newTitle;
+
+    cout << "\nEnter Task ID to update: ";
+    cin >> id;
+
+    cin.ignore();
+
+    for (Task& t : tasks)
+    {
+        if (t.id == id)
+        {
+            cout << "Enter new task: ";
+            getline(cin, newTitle);
+
+            t.title = newTitle;
+
+            saveTasks(tasks);
+
+            cout << "Task updated successfully!\n";
+            return;
+        }
+    }
+
+    cout << "Task not found.\n";
+}
+
 void completeTask(vector<Task>& tasks)
 {
     int id;
@@ -123,6 +152,7 @@ void completeTask(vector<Task>& tasks)
         if (t.id == id)
         {
             t.status = "Completed";
+
             saveTasks(tasks);
 
             cout << "Task marked as completed!\n";
@@ -145,6 +175,7 @@ void deleteTask(vector<Task>& tasks)
         if (tasks[i].id == id)
         {
             tasks.erase(tasks.begin() + i);
+
             saveTasks(tasks);
 
             cout << "Task deleted successfully!\n";
@@ -169,9 +200,10 @@ int main()
         cout << "1. Add Task\n";
         cout << "2. View Tasks\n";
         cout << "3. Search Task\n";
-        cout << "4. Mark Task Completed\n";
-        cout << "5. Delete Task\n";
-        cout << "6. Exit\n";
+        cout << "4. Update Task\n";
+        cout << "5. Mark Task Completed\n";
+        cout << "6. Delete Task\n";
+        cout << "7. Exit\n";
         cout << "================================\n";
 
         cout << "Enter choice: ";
@@ -192,14 +224,18 @@ int main()
             break;
 
         case 4:
-            completeTask(tasks);
+            updateTask(tasks);
             break;
 
         case 5:
-            deleteTask(tasks);
+            completeTask(tasks);
             break;
 
         case 6:
+            deleteTask(tasks);
+            break;
+
+        case 7:
             cout << "\nThank you!\n";
             break;
 
@@ -207,7 +243,7 @@ int main()
             cout << "\nInvalid choice!\n";
         }
 
-    } while (choice != 6);
+    } while (choice != 7);
 
     return 0;
 }
