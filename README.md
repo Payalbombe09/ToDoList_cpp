@@ -11,6 +11,7 @@ The application allows users to manage their tasks through a menu-driven interfa
 - Add a new task
 - View all tasks
 - Search for a task
+- Update a task
 - Mark a task as completed
 - Delete a task
 - Store tasks using file handling
@@ -18,14 +19,14 @@ The application allows users to manage their tasks through a menu-driven interfa
 ## Technologies Used
 
 - C++
-- File Handling
 - Object-Oriented Programming
+- File Handling
 - Vector
 
 ## How to Run
 
 1. Download or clone this repository.
-2. Open the C++ source file in Dev-C++.
+2. Open `ToDoList.cpp` in Dev-C++.
 3. Compile and run the program.
 4. Use the menu options to manage tasks.
 
