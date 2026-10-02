@@ -30,6 +30,20 @@ The application allows users to manage their tasks through a menu-driven interfa
 3. Compile and run the program.
 4. Use the menu options to manage tasks.
 
+## Screenshots
+### Main Menu
+![Main Menu](menu.png)
+
+### Tasks
+![Tasks](tasks.png)
+
+### Task Operations
+![Task Operation](task2.png)
+
+![Task Operation](task3.png)
+
+![Task Operation](task5.png)
+
 ## Project Type
 
 Console-based C++ application.
